@@ -47,11 +47,11 @@ In the commands below, replace `site` and `env` with your site name and the corr
 1.  `terminus drush <site>.dev -- cex -y`
 2.  `terminus env:commit <site>.dev --message="Export configuration to code"`
 3.  `terminus env:deploy <site>.test --sync-content --cc --updatedb --note="Deploy configuration to test"`
-4.  `terminus drush <site>.<env> -- cim -y`
+4.  `terminus drush <site>.test -- cim -y`
 5.  `open https://test-mysite.pantheonsite.io`
 6.  `terminus env:deploy <site>.live --cc --note="Deploy configuration to live"`
 7.  `terminus drush <site>.live -- cim -y`
-8.  `open live-mysite.pantheonsite.io`
+8.  `open https://live-mysite.pantheonsite.io`
 
 ## Configuration Tools for Drupal 8
 With [Drupal 8](https://pantheon.io/drupal-8){.external}, much more powerful tools promise to greatly improve this situation. The new configuration management system provides complete and consistent import and export of all configuration settings, and Git already provides facilities for managing parallel work on different branches. When conflicts occur, it is  possible to back out the conflicting changes, take just the version provided in the central repository, or use three-way merge tools such as `kdiff3` to examine and manually resolve each difference. A new Drush project, [config-extra](https://github.com/drush-ops/config-extra){.external}, includes a `config-merge` command that streamlines the use of these tools.
